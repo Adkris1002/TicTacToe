@@ -148,8 +148,11 @@ def minimax(board):
 def minimax_value(board, best_value):
     """
     Returns the best value for each recursive minimax iteration.
-    Optimized using Alpha-Beta Pruning: If the new value found is better
-    than the best value then return without checking the others.
+    If the new value found is better thann the best value 
+    then return without checking the others.
+    Works by knowing the winning action for X is one that forces O to make a non-winning action
+    Agent will look ahead in time at all the consequences and rewards if it were to make the action it considers
+    It will then choose the action that has the most reward for it, in that it forces O to not have reward at all
     """
     if terminal(board):
         return utility(board)
